@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Studio de Nail Design</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="bg-pink-50 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 border border-pink-100">
+        <div class="text-center mb-6">
+            <!-- Logotipo / Imagem da Empresa Centralizada -->
+<div class="flex justify-center mb-4">
+  <img src="logo.png" alt="Logo da Empresa" class="w-24 h-24 object-contain rounded-full shadow-md border-2 border-pink-200">
+</div>
+            <h1 class="text-2xl font-bold text-pink-700">✨ Agendamento</h1>
+            <p class="text-gray-500 text-sm mt-1">Escolha seu procedimento e garanta seu horário</p>
+        </div>
+
+        <form id="formAgendamento" class="space-y-4">
+            <div>
+                <label class="block text-gray-700 text-sm font-semibold mb-1">Seu Nome</label>
+                <input type="text" id="nome" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Ex: Maria Silva">
+            </div>
+
+            <div>
+                <label class="block text-gray-700 text-sm font-semibold mb-1">WhatsApp</label>
+                <input type="text" id="whatsapp" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" placeholder="Ex: (11) 99999-9999">
+            </div>
+            
+            <!-- Tabela / Quadro de Preços dos Serviços -->
+<div class="my-4 p-4 bg-pink-50 border border-pink-200 rounded-xl shadow-sm">
+  <h3 class="text-xs font-bold uppercase tracking-wider text-pink-700 mb-3 text-center">
+    Tabela de Preços
+  </h3>
+  <div class="space-y-2 text-sm text-gray-700">
+    <div class="flex justify-between items-center border-b border-pink-100 pb-1">
+      <span class="font-medium">Banho de Gel</span>
+      <span class="font-bold text-pink-600">R$ 15,00</span>
+    </div>
+    <div class="flex justify-between items-center border-b border-pink-100 pb-1">
+      <span class="font-medium">Esmaltação de Gel</span>
+      <span class="font-bold text-pink-600">R$ 15,00</span>
+    </div>
+    <div class="flex justify-between items-center border-b border-pink-100 pb-1">
+      <span class="font-medium">Manutenção</span>
+      <span class="font-bold text-pink-600">R$ 15,00</span>
+    </div>
+    <div class="flex justify-between items-center">
+      <span class="font-medium">Blindagem</span>
+      <span class="font-bold text-pink-600">R$ 15,00</span>
+    </div>
+  </div>
+</div>
+            <div>
+                <label class="block text-gray-700 text-sm font-semibold mb-1">Serviço</label>
+                <select id="servico" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white">
+                    <option value="">Selecione um serviço...</option>
+                    <option value="Banho de Gel">Banho de Gel</option>
+                    <option value="Esmaltação em Gel">Esmaltação em Gel</option>
+                    <option value="Manutenção">Manutenção</option>
+                    <option value="Blindagem">Blindagem</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 text-sm font-semibold mb-1">Data e Horário</label>
+                <input type="datetime-local" id="data_hora" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400">
+            </div>
+
+            <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-lg transition duration-200 shadow-md">
+                Confirmar Agendamento
+            </button>
+        </form>
+        
+        <div id="mensagem" class="mt-4 text-center text-sm font-medium hidden"></div>
+    </div>
+
+    <!-- Script de Conexão -->
+    <script src="app.js"></script>
+</body>
+</html>
